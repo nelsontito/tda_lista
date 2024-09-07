@@ -1,19 +1,28 @@
-public class main nodo {
-
+public class main {
     public static void main(String[] args) {
-        ListaEnlazada lista = new ListaEnlazada();
-        lista.insertar(1);
-        lista.insertar(2);
-        lista.insertar(3);
+        // prueba del tda lista
+        Lista listaNumeros = new Lista();
+        listaNumeros.insertarElemento(5);
+        listaNumeros.insertarElemento(7);
+        listaNumeros.insertarElemento(21);
+        listaNumeros.insertarElemento(10);
+        listaNumeros.insertarElemento(14);
+        listaNumeros.insertarElemento(11);
+        listaNumeros.insertarElemento(17);
+        listaNumeros.insertarElemento(30);
+        listaNumeros.insertarElemento(7);
+        // boolean estaVacia = listaNumeros.estaVacia();
+        // System.out.println(estaVacia);
+        // String listaString = listaNumeros.toString();
+        // System.out.println(listaString);
 
-        System.out.println("Elementos de la lista");
-        lista.recorrer();
+        // clase en la que se programo el metodo recorrer lista
+        // prbando metodo recorrido :)
+        String recorridoString = listaNumeros.recorrerLista();
+        System.out.println(recorridoString);
 
-        System.out.println("Buscar 2: " + lista.buscar(2));
-        lista.eliminar(2);
-        System.out.println(" Elementos despues de eliminar 2: ");
-        lista.recorrer();
-
-        System.out.println("¿la lista esta vacia?" + lista.estaVacia() );
+        boolean datoEncontrado = listaNumeros.seEncuentraElemento("");
+        System.out.println(datoEncontrado);
+        
     }
 }

@@ -1,78 +1,41 @@
 public class nodo {
+  private Object dato;
+  private nodo enlace;
 
-    int dato;
-    nodo siguiente;
+  public nodo() {
+      dato = null;
+      enlace = null;
+  }
 
-    public nodo (int dato){
-        this.dato = dato;
-        this.siguiente = null;
-    }
-}
+  public nodo(Object dato) {
+      this.dato = dato;
+      enlace = null;
+  }
 
-class ListaEnlazada{
-     private nodo cabeza;
-      public ListaEnlazada(){
-        this.cabeza = null;
-      }
+  public nodo(Object dato, nodo enlace) {
+      this.dato = dato;
+      this.enlace = enlace;
+  }
 
-      public void insertar (int dato){
-        nodo nuevoNodo = new nodo (dato);
-        if(cabeza == null){
-            cabeza = nuevoNodo;
-        }else{
-            nodo temp = cabeza;
-            while(temp.siguiente != null){
-                temp = temp.siguiente;
-            }
-            temp.siguiente = nuevoNodo;
-        }
-      }
+  public nodo getEnlace() {
+      return enlace;
+  }
 
-      public void eliminar (int dato){
-        if (cabeza == null) return;
+  public void setEnlace(nodo enlace) {
+      this.enlace = enlace;
+  }
 
-        if(cabeza.dato == dato){
-            cabeza = cabeza.siguiente;
-            return;
-        }
+  public Object getDato() {
+      return dato;
+  }
 
-        nodo temp = cabeza;
-        while (temp.siguiente != null && temp.siguiente.dato !=dato){
-            temp = temp.siguiente;
-        }
+  public void setDato(Object dato) {
+      this.dato = dato;
+  }
 
-        if(temp.siguiente !=null){
-            temp.siguiente = temp.siguiente.siguiente;
-        }
-      }
+  @Override
+  public String toString() {
+      return "Nodo [dato=" + dato + ", enlace=" + enlace + "]";
+  }
 
-
-
-      public boolean buscar (int dato){
-        nodo temp = cabeza;
-        while (temp != null){
-            if (temp.dato ==dato){
-                return true;
-            }
-
-            temp = temp.siguiente;
-        }
-
-        return false;
-      }
-
-      public void recorrer(){
-        nodo temp = cabeza;
-        while (temp != null){
-            System.out.print(temp.dato + " ");
-            temp = temp.siguiente;
-        }
-        System.out.println();
-      }
-
-
-      public boolean estaVacia(){
-        return cabeza == null;
-      }
-      
 }
